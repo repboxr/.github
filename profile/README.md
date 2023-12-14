@@ -56,6 +56,11 @@ Currently, all packages are in a pilot phase and the project needs substantial l
 [repboxHtml](https://github.com/repboxr/repboxHtml): Generate reports consisting of HTML pages that describe the results of repbox analyses.
   - Currently, we create HTML pages that show the script files on the left hand side. On the right hand side are the extracted tables from the articles with color coding to describe the mapping and quickly detect possible problems.
 
-[repboxHtml](https://github.com/repboxr/repboxHtml): Generate reports consisting of HTML pages that describe the results of repbox analyses.
-  - Currently, we create HTML pages that show the script files on the left hand side. On the right hand side are the extracted tables from the articles with color coding to describe the mapping and quickly detect possible problems.
+[repboxDB](https://github.com/repboxr/repboxDB): Functionality to systematically store data extracted in repbox analyses.
+  - We will store externally accessible data in a flat table format. This means we will allow no nested json structures. Rather we follow standard design of SQL data bases and use key variables to map entries of different tables. 
+  - Key component are table specifications as YAML files (see e.g. https://github.com/repboxr/repboxDB/blob/main/inst/regdb/stata_cmd.yml). They describe the fields in each table, their data type and a possible explanation of the fields.
+  - While also indeces of the tables can be specified, they are not yet used.
+  - Currently, table data will just be stored in R's native Rds format separately for each project. Information from multiple tables can be stored together in a single Rds file. We call such a collection a `parcel`. Internally,  parcel is an R list that can contain data frames of multiple tables. The exact specification of parcels is not yet described in YAML files.
+  - Different parcels may contain information from the same table. E.g. there is a table `reg` that stores general information about a regression. We may have a parcel that stores information from regression run in R scripts and another parcels
+  - The table definitions also allow other storage modes, e.g. a SQLite database.
 
