@@ -2,13 +2,13 @@
 
 Author: Sebastian Kranz, Ulm University
 
-The *repbox* project is a collection of tools (mostly R packages) with the goal to facilitate reproducible research. For the project, I created the [repboxr](https://github.com/repboxr/) organisation on Github (The name `repbox` was already taken.) The project currently concentrates on economics and social sciences.
+The *repbox* project is a collection of tools (mostly R packages) with the goal to facilitate reproducible research. For the project, I created the [repboxr](https://github.com/repboxr/) organisation on Github. (The name `repbox` was already taken). The project currently concentrates on economics and social sciences.
 
 Main goals:
   - Help data editors and authors to check replication package of to be published scientific articles
   - Create a systematic data base for meta studies containing mapped information from run supplements and articles. A focus will be on regression analyses. 
 
-Currently Stata and R scripts in supplements can be analyzed, with more functionality implemented for Stata scripts.
+Stata and R scripts in replication packages can be analyzed. Currently, more functionality is implemented for Stata scripts.
 
 ## Far from being generally usable
 
