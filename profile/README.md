@@ -2,11 +2,13 @@
 
 Author: Sebastian Kranz, Ulm University
 
-The *repbox* project is a collection of tools (mostly R packages) that shall facilitate reproducible research. For the project, I created the [repboxr](https://github.com/repboxr/) organisation on Github (The name `repbox` was already taken.) The project currently concentrates on economics and social sciences.
+The *repbox* project is a collection of tools (mostly R packages) with the goal to facilitate reproducible research. For the project, I created the [repboxr](https://github.com/repboxr/) organisation on Github (The name `repbox` was already taken.) The project currently concentrates on economics and social sciences.
 
 Main goals:
   - Help data editors and authors to check replication package of to be published scientific articles
   - Create a systematic data base for meta studies containing mapped information from run supplements and articles. A focus will be on regression analyses. 
+
+Currently Stata and R scripts in supplements can be analyzed, with more functionality implemented for Stata scripts.
 
 ## Far from being generally usable
 
@@ -82,19 +84,29 @@ TO DO: Add repositories with concrete Github action pipelines that can be forked
 
 One of the future goals is to add large language model analysis for the code and article text to the repbox framework. That could both benefit checking of replication packages, as well as augment data bases for meta studies. But so far there is nothing.
 
-### Further Utility packages
+### Further utility packages
 
-[extractSciTab]((https://github.com/repboxr/extractSciTab): Extract scientific tables from PDF.
+[extractSciTab](https://github.com/repboxr/extractSciTab): Extract scientific tables from PDF.
   - The package considers text representations of article PDF files generated with [pdftotext](https://manpages.debian.org/experimental/poppler-utils/pdftotext.1.en.html. Then use heuristics to detect and extract scientific tables.
   - It is used by the `repboxArt` package, which further transforms the table information into a common format for tables extracted from PDF and HTML more suitable for further analysis.
 
 [sourcemodify](https://github.com/repboxr/sourcemodify): Analyse and modify R source code
-
   - Extends `utils::getParseData` to parse R source code and return the information about every token in a convenient data frame format. We augment the information, e.g. by determining which expressions are inside a function.
   - The package then allows to systematically modify the code, e.g. replace or surround certain function calls or function arguments.
   - The package is used by `repboxR` for static code analysis and to modify code for automatic path correction and extraction of regression specific information.
+
+[repboxEvaluate](https://github.com/repboxr/repboxEvaluate): A fork of the [evaluate](https://github.com/r-lib/evaluate) package used by repboxR to evaluate R scripts in a way that facilitates systematic storage of results.
+
+[repboxRfun](https://github.com/repboxr/repboxRfun): Contains functions called when modified R scripts are run.
+  - Mainly functions for automatic path correction at run time and to extract and store information after a regression command was run.
   
 [repboxUtils](https://github.com/repboxr/repboxUtils): A collection of utility functions shared across repbox packages.
+
+[pkgFunIndex](https://github.com/repboxr/repboxUtils): Extract information about functions in R packages
+  - The goal of this package is to generate systematic information about exported functions of all R package versions on CRAN.
+  - That information could be helpful to determine approbriate package versions to run a historic replication package. But currently, the database is not yet generated and not used by any other repbox package.
+
+
 
 ### Repositories for examples, issues and testing
 
@@ -105,3 +117,4 @@ The following repositories are so far pretty empty, but should be helpful in the
 [repboxIssues](https://github.com/repboxr/repboxIssues): Central repository to discuss repbox related issues.
 
 [repboxTests](https://github.com/repboxr/repboxTests): Unit tests
+
