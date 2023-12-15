@@ -2,17 +2,19 @@
 
 Author: Sebastian Kranz, Ulm University
 
-The `repboxr` organisation mainly contains R packages for the *Repbox* project that shall facilitate reproducible research. (Unfornately `repbox` was already taken as an organisation name on Github. Since most of the code is in R, I picked `repboxr`, instead.) The project currently concentrates on economics and social sciences.
+The *repbox* project is a collection of tools (mostly R packages) that shall facilitate reproducible research. For the project, I created the [repboxr](https://github.com/repboxr/) organisation on Github (The name `repbox` was already taken.) The project currently concentrates on economics and social sciences.
 
-The main goals are:
-  - Help data editors and authors to check code & data supplements
+Main goals:
+  - Help data editors and authors to check replication package of to be published scientific articles
   - Create a systematic data base for meta studies containing mapped information from run supplements and articles. A focus will be on regression analyses. 
 
 ## Far from being generally usable
 
-Currently, all packages are in a pilot phase and the project needs substantial large scale testing, improvement and documentation. It will take substantial effort before it can be used for researchers to run their meta studies and there can be a lot of breaking changes. While currently almost all contributions are by Sebastian Kranz, the goals is that a stable version will have a wide community including data editors, authors and researchers performing meta studies.
+Currently, all packages are in a pilot phase and the project needs substantial large scale testing, improvement and documentation. The exact stage of development differs between packages, but it will take substantial effort before repbox can be used for researchers to run their own meta studies. Also the overall design is far from being settled and you should expect a lot of breaking changes in future. While currently almost all contributions have been made by Sebastian Kranz, the goal is that a future stable version will have a wide community including data editors, authors and researchers performing meta studies.
 
-## Overview of packages and repositories
+## Packages and repositories
+
+### General packages
 
 [repboxRun](https://github.com/repboxr/repboxRun): Functions that help running repbox analysis steps that are implemented in the different packages.
 
@@ -59,8 +61,47 @@ Currently, all packages are in a pilot phase and the project needs substantial l
 [repboxDB](https://github.com/repboxr/repboxDB): Functionality to systematically store data extracted in repbox analyses.
   - We will store externally accessible data in a flat table format. This means we will allow no nested json structures. Rather we follow standard design of SQL data bases and use key variables to map entries of different tables. 
   - Key component are table specifications as YAML files (see e.g. https://github.com/repboxr/repboxDB/blob/main/inst/regdb/stata_cmd.yml). They describe the fields in each table, their data type and a possible explanation of the fields.
-  - While also indeces of the tables can be specified, they are not yet used.
-  - Currently, table data will just be stored in R's native Rds format separately for each project. Information from multiple tables can be stored together in a single Rds file. We call such a collection a `parcel`. Internally,  parcel is an R list that can contain data frames of multiple tables. The exact specification of parcels is not yet described in YAML files.
+  - Currently, not all table definitions are in the repboxDB package. E.g. the repboxArt package contains table definitions related to articles.
+  - While also indices of the tables can be specified, they are not yet used.
+  - Currently, table data will just be stored in R's native Rds format separately for each project. Information from multiple tables can be stored together in a single Rds file. We call such a collection a `parcel`. Internally,  parcel is an R list that can contain data frames of multiple tables. While the different packages store specific parcels, the exact specification of the parcels is not yet described in any YAML files.
   - Different parcels may contain information from the same table. E.g. there is a table `reg` that stores general information about a regression. We may have a parcel that stores information from regression run in R scripts and another parcels
   - The table definitions also allow other storage modes, e.g. a SQLite database.
+  - Currently many function names and directories use the prefix `regdb`. That is because one main application of the DB is to store information related to regressions. But also other information will be stored in the data base. Possibly, we will change the prefix in the future.
+  
+### Repositories for Github Action Pipelines
 
+One way to use repbox is via Github Action Pipelines. The following repositories help:
+
+[GithubActions](https://github.com/repboxr/GithubActions): Contains functions to easier use Github Actions from R.
+
+[repboxGithub](https://github.com/repboxr/repboxGithub): Functions for Github interactions specific to repboxGithub
+
+TO DO: Add repositories with concrete Github action pipelines that can be forked.
+
+### Repositories for LLM analysis (do not yet exist)
+
+One of the future goals is to add large language model analysis for the code and article text to the repbox framework. That could both benefit checking of replication packages, as well as augment data bases for meta studies. But so far there is nothing.
+
+### Further Utility packages
+
+[extractSciTab]((https://github.com/repboxr/extractSciTab): Extract scientific tables from PDF.
+  - The package considers text representations of article PDF files generated with [pdftotext](https://manpages.debian.org/experimental/poppler-utils/pdftotext.1.en.html. Then use heuristics to detect and extract scientific tables.
+  - It is used by the `repboxArt` package, which further transforms the table information into a common format for tables extracted from PDF and HTML more suitable for further analysis.
+
+[sourcemodify](https://github.com/repboxr/sourcemodify): Analyse and modify R source code
+
+  - Extends `utils::getParseData` to parse R source code and return the information about every token in a convenient data frame format. We augment the information, e.g. by determining which expressions are inside a function.
+  - The package then allows to systematically modify the code, e.g. replace or surround certain function calls or function arguments.
+  - The package is used by `repboxR` for static code analysis and to modify code for automatic path correction and extraction of regression specific information.
+  
+[repboxUtils](https://github.com/repboxr/repboxUtils): A collection of utility functions shared across repbox packages.
+
+### Repositories for examples, issues and testing
+
+The following repositories are so far pretty empty, but should be helpful in the longer run.
+
+[repboxExamples](https://github.com/repboxr/repboxExamples): Shall contain one or several example projects.
+
+[repboxIssues](https://github.com/repboxr/repboxIssues): Central repository to discuss repbox related issues.
+
+[repboxTests](https://github.com/repboxr/repboxTests): Unit tests
