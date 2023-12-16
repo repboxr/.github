@@ -13,6 +13,7 @@ Stata and R scripts in replication packages can be analyzed. Currently, more fun
 ## Far from being generally usable
 
 Currently, all packages are in a pilot phase and the project needs substantial large scale testing, improvement and documentation. The exact stage of development differs between packages, but it will take substantial effort before repbox can be used for researchers to run their own meta studies. Also the overall design is far from being settled and you should expect a lot of breaking changes in future. While currently almost all contributions have been made by Sebastian Kranz, the goal is that a future stable version will have a wide community including data editors, authors and researchers performing meta studies.
+  
 
 ## Packages and repositories
 
@@ -106,8 +107,6 @@ One of the future goals is to add large language model analysis for the code and
   - The goal of this package is to generate systematic information about exported functions of all R package versions on CRAN.
   - That information could be helpful to determine approbriate package versions to run a historic replication package. But currently, the database is not yet generated and not used by any other repbox package.
 
-
-
 ### Repositories for examples, issues and testing
 
 The following repositories are so far pretty empty, but should be helpful in the longer run.
@@ -118,3 +117,23 @@ The following repositories are so far pretty empty, but should be helpful in the
 
 [repboxTests](https://github.com/repboxr/repboxTests): Unit tests
 
+# Projects
+
+A *project* refers to a particular research article, its data and code supplement and the corresponding results of the performed repbox analysis steps.
+
+Every project has a separate directory. In the repbox database a project is identified by a unique `artid`. The basename of the project directory should be equal to its artid.
+
+The exact structure of a project directory is still not fixed. In December 2023, the following subfolders can be found:
+
+  -  **org** contains the original code and data supplement
+  -  **mod** contains a modified code and data supplement including scripts modified by code injection
+  -  **repbox** contains extracted information from static and runtime analysis of the supplements. There can be subfolders for R and Stata.
+  -  **art** contains the original article (PDF or HTML) and information extracted from it
+  -  **meta** contains meta information from the article, currently always taken from the EJD data base. After the repbox analysis is run, the meta infomation will also be stored in the table *art*.
+  -  **map** contains results from mapping information about extracted tables from the article and the results from the scripts. 
+  -  **reports** contains HTML reports of the repbox results
+  -  **metareg** contains also extracted information from the repbox run in a format that will facilitate future meta studies. Far from being settled and well documented.
+
+
+
+The *exported* data of the different repbox analysis steps
