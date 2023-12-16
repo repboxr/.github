@@ -88,7 +88,7 @@ One of the future goals is to add large language model analysis for the code and
 ### Further utility packages
 
 [extractSciTab](https://github.com/repboxr/extractSciTab): Extract scientific tables from PDF.
-  - The package considers text representations of article PDF files generated with [pdftotext](https://manpages.debian.org/experimental/poppler-utils/pdftotext.1.en.html. Then use heuristics to detect and extract scientific tables.
+  - The package considers text representations of article PDF files generated with [pdftotext](https://manpages.debian.org/experimental/poppler-utils/pdftotext.1.en.html). Then use heuristics to detect and extract scientific tables.
   - It is used by the `repboxArt` package, which further transforms the table information into a common format for tables extracted from PDF and HTML more suitable for further analysis.
 
 [sourcemodify](https://github.com/repboxr/sourcemodify): Analyse and modify R source code
