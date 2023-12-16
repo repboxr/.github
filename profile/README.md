@@ -121,7 +121,7 @@ The following repositories are so far pretty empty, but should be helpful in the
 
 A *project* refers to a particular research article, its data and code supplement and the corresponding results of the performed repbox analysis steps.
 
-Every project has a separate directory. In the repbox database a project is identified by a short, unique `artid`. The basename of the project directory should be equal to its artid.
+Every project has a separate directory. In the repbox database a project is identified by a short, unique `artid`, like `aer_112_9_9`. The basename of the project directory should be equal to its artid.
 
 The exact structure of a project directory is still not fixed. In December 2023, the following subfolders can be found:
 
