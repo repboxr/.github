@@ -121,7 +121,7 @@ The following repositories are so far pretty empty, but should be helpful in the
 
 A *project* refers to a particular research article, its data and code supplement and the corresponding results of the performed repbox analysis steps.
 
-Every project has a separate directory. In the repbox database a project is identified by a unique `artid`. The basename of the project directory should be equal to its artid.
+Every project has a separate directory. In the repbox database a project is identified by a short, unique `artid`. The basename of the project directory should be equal to its artid.
 
 The exact structure of a project directory is still not fixed. In December 2023, the following subfolders can be found:
 
@@ -134,6 +134,6 @@ The exact structure of a project directory is still not fixed. In December 2023,
   -  **reports** contains HTML reports of the repbox results
   -  **metareg** contains also extracted information from the repbox run in a format that will facilitate future meta studies. Far from being settled and well documented.
 
+The generated data parcels (see description of repboxDB above) of the different repbox steps are scattered around the different subfolders and can be typically found in a `regdb` subdirectory. To load them the `repboxDB::regdb_load_parcels` function is recommended.
 
-
-The *exported* data of the different repbox analysis steps
+The idea is that appropriate information from the project directories can be aggregated and exported in different forms. For example, one might generate larger databases that allow to search for particular regression specifications used in articles.
