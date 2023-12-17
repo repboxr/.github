@@ -98,6 +98,9 @@ One of the future goals is to add large language model analysis for the code and
 
 [repboxEvaluate](https://github.com/repboxr/repboxEvaluate): A fork of the [evaluate](https://github.com/r-lib/evaluate) package used by repboxR to evaluate R scripts in a way that facilitates systematic storage of results.
 
+[repboxDeploy](https://github.com/repboxr/repboxDeploy): Tools to deploy a repbox project in different forms
+  - Currently it contains only some very basic functionality to deploy a project's results as an example for `repboxExamples`
+
 [repboxRfun](https://github.com/repboxr/repboxRfun): Contains functions called when modified R scripts are run.
   - Mainly functions for automatic path correction at run time and to extract and store information after a regression command was run.
   
@@ -111,7 +114,7 @@ One of the future goals is to add large language model analysis for the code and
 
 The following repositories are so far pretty empty, but should be helpful in the longer run.
 
-[repboxExamples](https://github.com/repboxr/repboxExamples): Shall contain one or several example projects.
+[repboxExamples](https://github.com/repboxr/repboxExamples): Shall contain one or several example projects. 
 
 [repboxIssues](https://github.com/repboxr/repboxIssues): Central repository to discuss repbox related issues.
 
