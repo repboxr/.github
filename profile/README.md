@@ -23,7 +23,7 @@ Currently, all packages are in a pilot phase and the project needs substantial l
 
 [repboxArt](https://github.com/repboxr/repboxArt): Analyse articles in PDF or HTML versions.
   - Convert PDF or HTML to a common representation that stores text information including sections, paragraphs and footnote markers.
-  - Extract and store scientific tables (relying on the `extractSciTab` package explained further below).
+  - Extract and store scientific tables (relying on the `ExtractSciTab` package explained further below).
   - Analyse keywords, like `regression analys` and links to tables or figures in the text.
 
 [repboxCodeText](https://github.com/repboxr/repboxCodeText): Study keywords in comments of supplement script files.
@@ -87,7 +87,7 @@ One of the future goals is to add large language model analysis for the code and
 
 ### Further utility packages
 
-[extractSciTab](https://github.com/repboxr/extractSciTab): Extract scientific tables from PDF.
+[ExtractSciTab](https://github.com/repboxr/ExtractSciTab): Extract scientific tables from PDF.
   - The package considers text representations of article PDF files generated with [pdftotext](https://manpages.debian.org/experimental/poppler-utils/pdftotext.1.en.html). Then use heuristics to detect and extract scientific tables.
   - It is used by the `repboxArt` package, which further transforms the table information into a common format for tables extracted from PDF and HTML more suitable for further analysis.
 
