@@ -106,6 +106,8 @@ One of the future goals is to add large language model analysis for the code and
   
 [repboxUtils](https://github.com/repboxr/repboxUtils): A collection of utility functions shared across repbox packages.
 
+[repboxverse](https://github.com/repboxr/repboxverse): Similar to the tidyverse package a package that helps installing and loading all relevant repbox packages.
+
 [pkgFunIndex](https://github.com/repboxr/pkgFunIndex): Extract information about functions in R packages
   - The goal of this package is to generate systematic information about exported functions of all R package versions on CRAN.
   - That information could be helpful to determine approbriate package versions to run a historic replication package. But currently, the database is not yet generated and not used by any other repbox package.
