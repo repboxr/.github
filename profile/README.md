@@ -31,6 +31,7 @@ To install repbox on your local system, you first need to install R. Then you ca
 ```r
 install.packages('repboxverse', repos = c('https://repboxr.r-universe.dev', 'https://cloud.r-project.org'))
 ```
+If possibly this will install binary packages for your OS, which are built and hosted from [r-universe](https://repboxr.r-universe.dev/builds).
 
 I am currently documenting and developing an example on how to run a repbox analysis locally for a reproduction packages. Examples, for the Docker containers or Github Action pipelines will be developed later.
 
