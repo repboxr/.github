@@ -12,8 +12,27 @@ Stata and R scripts in replication packages can be analyzed. Currently, more fun
 
 ## Far from being generally usable
 
-Currently, all packages are in a pilot phase and the project needs substantial large scale testing, improvement and documentation. The exact stage of development differs between packages, but it will take substantial effort before repbox can be used for researchers to run their own meta studies. Also the overall design is far from being settled and you should expect a lot of breaking changes in future. While currently almost all contributions have been made by Sebastian Kranz, the goal is that a future stable version will have a wide community including data editors, authors and researchers performing meta studies.
-  
+Currently, all packages are in a pilot phase and the project needs substantial large scale testing, improvement and documentation. The exact stage of development differs between packages, but it will take substantial effort before repbox can be used for researchers to run their own meta studies. Also the overall design is far from being settled and you should expect a lot of breaking changes in future.
+
+In the moment more features are implemented for Stata than for R, like mapping of regression results. The goal is to have a similar feature set in the future.
+
+While currently almost all contributions have been made by Sebastian Kranz, the goal is that a future stable version will have a wide community including data editors, authors and researchers performing meta studies.
+
+## Installation and Usage
+
+There will be different ways to use the repbox toolchain to check reproduction packages:
+
+1. Running directly on your local system
+2. Running inside docker containers
+3. Running in a Github Action pipeline or similar frameworks.
+
+To install repbox on your local system, you first need to install R. Then you can install all required packages by running in R:
+
+```r
+install.packages('repboxverse', repos = c('https://repboxr.r-universe.dev', 'https://cloud.r-project.org'))
+```
+
+I am currently documenting and developing an example on how to run a repbox analysis locally for a reproduction packages. Examples, for the Docker containers or Github Action pipelines will be developed later.
 
 ## Packages and repositories
 
