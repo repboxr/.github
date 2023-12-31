@@ -100,7 +100,7 @@ One way to use repbox is via Github Action Pipelines. The following repositories
 
 [repboxGithub](https://github.com/repboxr/repboxGithub): Functions for Github interactions specific to repboxGithub
 
-TO DO: Add repositories with concrete Github action pipelines that can be forked.
+[gha_repbox_mono](https://github.com/repboxr/gha_repbox_mono): A template repo that can be adapted to run a repbox analysis of a single article & supplement via Github Actions.
 
 ### Repositories for LLM analysis (do not yet exist)
 
