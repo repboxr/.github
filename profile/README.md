@@ -12,11 +12,11 @@ Stata and R scripts in replication packages can be analyzed. Currently, more fun
 
 ## Far from being generally usable
 
-Currently, all packages are in a pilot phase and the project needs substantial large scale testing, improvement and documentation. The exact stage of development differs between packages, but it will take substantial effort before repbox can be used for researchers to run their own meta studies. Also the overall design is far from being settled and you should expect a lot of breaking changes in future.
+Currently, all packages are in a pilot phase and the project needs substantial large scale testing, improvement and documentation. The exact stage of development differs between packages, but it will take substantial effort before repbox can be used for researchers to run their own meta studies. Also the overall design is far from being settled and you should expect a lot of breaking changes in future. 
 
-In the moment more features are implemented for Stata than for R, like mapping of regression results. The goal is to have a similar feature set in the future.
+The pilot version of repbox can be tested by data editors to check reproduction package, but it is far away from being usable for meta studies.
 
-While currently almost all contributions have been made by Sebastian Kranz, the goal is that a future stable version will have a wide community including data editors, authors and researchers performing meta studies.
+In the moment more features are implemented for Stata than for R, like mapping of regression results. The goal is to have a similar feature set in the future. While currently almost all contributions have been made by Sebastian Kranz, the goal is that a future stable version will have a wide community including data editors, authors and researchers performing meta studies.
 
 ## Testing pilot version of repbox as a data editor
 
