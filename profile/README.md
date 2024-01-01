@@ -18,22 +18,28 @@ In the moment more features are implemented for Stata than for R, like mapping o
 
 While currently almost all contributions have been made by Sebastian Kranz, the goal is that a future stable version will have a wide community including data editors, authors and researchers performing meta studies.
 
-## Installation and Usage
+## Testing pilot version of repbox as a data editor
 
-There will be different ways to use the repbox toolchain to check reproduction packages:
+If you want to test repbox as a data editor (or member of a data editor team), I would recommend to use it via GitHub actions. There is a tutorial video here:
+
+https://www.youtube.com/watch?v=T7DWBMzKboQ
+
+and a short overview in the README.md here:
+
+https://github.com/repboxr/gha_repbox_mono
+
+In the future the shall be different ways to use the repbox toolchain to check reproduction packages:
 
 1. Running directly on your local system
 2. Running inside docker containers
 3. Running in a Github Action pipeline or similar frameworks.
-
+ 
 To install repbox on your local system, you first need to install R. Then you can install all required packages by running in R:
 
 ```r
 install.packages('repboxverse', repos = c('https://repboxr.r-universe.dev', 'https://cloud.r-project.org'))
 ```
-If possibly this will install binary packages for your OS, which are built and hosted from [r-universe](https://repboxr.r-universe.dev/builds).
-
-I am currently documenting and developing an example on how to run a repbox analysis locally for a reproduction packages. Examples, for the Docker containers or Github Action pipelines will be developed later.
+If possibly this will install binary packages for your OS, which are built and hosted from [r-universe](https://repboxr.r-universe.dev/builds). I have not yet developed a usage example on your local system, but recommend to test it via Github actions.
 
 ## Packages and repositories
 
